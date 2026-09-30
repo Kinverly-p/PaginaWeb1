@@ -3,108 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecatrónica Automotriz | Programas de estudio</title>
+    <title>Mecatrónica Automotriz | IESP Huanta</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .quote-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; max-width: 1120px; margin: 0 auto; }
+        .quote-grid .quote-card { width: auto; min-height: 15rem; margin: 0; transition: transform 220ms ease, box-shadow 220ms ease; }
+        .quote-grid .quote-card:nth-child(2) { animation-delay: 120ms; }
+        .quote-grid .quote-card:nth-child(3) { animation-delay: 240ms; }
+        .quote-grid .quote-card:hover { transform: translateY(-8px); box-shadow: 0 24px 42px rgba(23, 105, 232, .16); }
+        .modules-section { padding: 5rem max(1.5rem, calc((100% - 1180px) / 2)) 4rem; background: #f5f7fb; }
+        .modules-intro { max-width: 1180px; margin: 0 auto 2.6rem; text-align: center; }
+        .modules-intro p { max-width: 900px; margin: 0 auto 1rem; color: #53667b; font-size: 1rem; line-height: 1.8; }
+        .modules-intro h2 { margin: 0; color: #11263f; font-size: clamp(2.1rem, 3vw, 3rem); font-weight: 800; letter-spacing: -.05em; }
+        .modules-track { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 2.2rem; max-width: 1180px; margin: 0 auto; }
+        .module-card { position: relative; display: flex; flex-direction: column; background: rgba(255,255,255,.75); border: 1px solid #dfeaf5; border-radius: 1.2rem; box-shadow: 0 10px 28px rgba(15, 36, 63, .05); padding: 1.2rem 1.2rem 1.5rem; transition: transform .2s ease, box-shadow .2s ease; }
+        .module-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(15, 36, 63, .08); }
+        .module-image { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 5.5rem; padding: .7rem 1rem; margin-bottom: 1rem; background: linear-gradient(135deg, #eef4ff 0%, #dfeafc 100%); border: 1px solid #d7e3f7; border-radius: .9rem; }
+        .module-number { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: .7rem; background: linear-gradient(160deg, #0f56d7, #0c3d9d); color: #fff; font-size: .95rem; font-weight: 800; letter-spacing: .04em; box-shadow: inset 0 0 0 1px rgba(255,255,255,.22); }
+        .module-symbol { display: inline-flex; align-items: center; justify-content: center; width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 1px solid rgba(15, 86, 215, .25); color: #0d3f9b; background: rgba(255,255,255,.28); font-size: 1.2rem; font-weight: 700; }
+        .module-card h3 { margin: 0 0 .8rem; color: #11263f; font-size: clamp(1.12rem, 1.8vw, 1.7rem); line-height: 1.35; letter-spacing: -.03em; }
+        .module-card p { margin: 0; color: #53667b; font-size: .98rem; line-height: 1.75; }
+        @media (max-width: 760px) { .quote-grid { grid-template-columns: 1fr; } .modules-track { grid-template-columns: 1fr; gap: 1.3rem; } .module-card h3 { font-size: 1.2rem; } }
+        .program-footer { position: relative; display: grid; grid-template-columns: 1.35fr 1fr 1.1fr 1.25fr; gap: 2rem; padding: 4rem max(1.25rem, calc((100% - 1120px) / 2)) 1.4rem; overflow: hidden; color: #f0f8ff; background: radial-gradient(circle at 18% 30%, rgba(72, 178, 255, .58), transparent 25%), radial-gradient(circle at 82% 70%, rgba(118, 126, 255, .42), transparent 32%), linear-gradient(135deg, #0b2d5c, #15549a 58%, #14245f); background-size: 140% 140%, 130% 130%, 100% 100%; border-top: 4px solid #75d5ff; animation: footer-background 8s ease-in-out infinite alternate; }
+        .program-footer::before { position: absolute; right: -5rem; bottom: -13rem; width: 27rem; height: 27rem; border: 1px solid rgba(113, 198, 255, .22); border-radius: 50%; box-shadow: 0 0 0 2rem rgba(113, 198, 255, .04), 0 0 0 4rem rgba(113, 198, 255, .025); content: ''; animation: footer-orbit 10s ease-in-out infinite; }
+        .program-footer::after { position: absolute; top: -40%; right: 22%; width: 22rem; height: 180%; background: repeating-linear-gradient(135deg, transparent 0 2.5rem, rgba(83, 166, 255, .08) 2.55rem 2.62rem, transparent 2.67rem 5rem); content: ''; transform: skewX(-25deg); animation: footer-lines 12s linear infinite; pointer-events: none; }
+        .program-footer > div { position: relative; z-index: 1; animation: footer-rise .7s ease both; }
+        .program-footer > div:nth-child(2) { animation-delay: .12s; }
+        .program-footer > div:nth-child(3) { animation-delay: .24s; }
+        .program-footer > div:nth-child(4) { animation-delay: .36s; }
+        .program-footer h3 { margin: 0 0 .8rem; color: #fff; font-size: 1.08rem; letter-spacing: .02em; }
+        .program-footer h3::after { display: block; width: 2.4rem; height: 3px; margin-top: .45rem; border-radius: 3px; background: #8de5ff; content: ''; }
+        .footer-logo-badge { display: grid; width: 4.2rem; height: 2.2rem; margin-bottom: .9rem; place-items: center; border: 2px solid #f6d875; border-radius: 45% 8% 45% 8%; color: #fff; background: linear-gradient(135deg, #1775e8, #172a8d); font-size: .55rem; font-weight: 800; transform: rotate(-5deg); }
+        .program-footer p { margin: .45rem 0; color: #e1f1ff; font-size: .86rem; line-height: 1.7; }
+        .program-footer a { color: #fff; text-decoration: none; transition: color .2s ease, transform .2s ease; }
+        .program-footer a:hover { display: inline-block; color: #9ce9ff; transform: translateX(4px); }
+        .footer-facebook { display: inline-flex; align-items: center; gap: .45rem; font-weight: 700; }
+        .footer-facebook span { display: grid; width: 1.35rem; height: 1.35rem; place-items: center; border-radius: 50%; color: #fff; background: #1769e8; }
+        .program-footer-bottom { position: relative; z-index: 1; grid-column: 1 / -1; justify-self: stretch; width: 100%; margin-top: 1.3rem !important; padding-top: 1rem; border-top: 1px solid rgba(190, 230, 255, .42); color: #e4f4ff !important; text-align: center; }
+        @keyframes footer-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes footer-orbit { 50% { transform: translate(1rem, -.7rem) rotate(12deg); } }
+        @keyframes footer-background { from { background-position: 0% 30%, 100% 70%, 0 0; } to { background-position: 42% 70%, 58% 30%, 0 0; } }
+        @keyframes footer-lines { from { transform: translateX(0) skewX(-25deg); } to { transform: translateX(6rem) skewX(-25deg); } }
+        @media (max-width: 760px) { .program-footer { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } .program-footer-bottom { grid-column: 1 / -1; } }
+        @media (max-width: 480px) { .program-footer { grid-template-columns: 1fr; } }
+        @media (prefers-reduced-motion: reduce) { .program-footer, .program-footer::before, .program-footer::after { animation: none; } }
+    </style>
 </head>
 <body>
-    <header class="page-header">
-        <div class="contact-strip">
-            <span>☎ (066) 322296</span>
-            <span>⌖ Jr. Córdoba N° 650</span>
-            <span>✉ contactos@iestphuanta.edu.pe</span>
-        </div>
-        <div class="page-header-inner">
-            <a class="brand-mark" href="../../../index.html" aria-label="IESTP Huanta">IES<span>TP</span><small>HUANTA</small></a>
-            <nav class="page-nav">
-                <a href="../../../index.html">Inicio</a>
-                <a href="index.html">Programas de estudios</a>
-                <a href="../../../index.html#contacto">Contáctanos</a>
-            </nav>
-        </div>
+    <div class="contact-bar" aria-label="Información de contacto">
+        <span><b>☎</b> (066) 322296</span>
+        <span><b>⌖</b> Jr. Córdoba N.º 650</span>
+        <span><b>✉</b> contactos@iestphuanta.edu.pe</span>
+        <span><b>f</b> Facebook</span>
+    </div>
+
+    <header class="site-header">
+        <a class="brand" href="../../../index.html" aria-label="Volver al inicio">IESP <small>HUANTA</small></a>
+        <nav aria-label="Navegación principal">
+            <a href="../../../index.html#nosotros">Nosotros⌄</a>
+            <details class="nav-programs">
+                <summary class="nav-programs-toggle active">Programas de estudios <span>⌄</span></summary>
+                <div class="nav-programs-menu">
+                    <a href="diseno-web.html"><span>⌘</span> Diseño y Programación Web</a>
+                    <a href="enfermeria-tecnica.html"><span>✚</span> Enfermería Técnica</a>
+                    <a class="current-program" href="mecatronica.html"><span>⚙</span> Mecatrónica Automotriz</a>
+                    <a href="industrias-alimentarias.html"><span>◈</span> Industrias Alimentarias</a>
+                    <a href="produccion-agropecuaria.html"><span>✦</span> Producción Agropecuaria</a>
+                </div>
+            </details>
+            <a href="../../../index.html#noticias">Admisión y Matrícula⌄</a>
+            <a href="../../../index.html#estadisticas">Transparencia⌄</a>
+            <a href="../../../index.html#contacto">Trámite⌄</a>
+            <a href="../../../index.html#contacto">Contáctanos</a>
+            <a href="../../../index.html#servicios">Servicios⌄</a>
+            <a href="../../../index.html">Otras páginas⌄</a>
+        </nav>
     </header>
 
     <main>
-        <section class="career-banner">
-            <div class="banner-art" aria-hidden="true">
-                <span class="art-panel panel-one"></span>
-                <span class="art-panel panel-two"></span>
-                <span class="art-panel panel-three"></span>
-                <span class="art-panel panel-four"></span>
-                <span class="art-label">05<br><small>Carreras</small></span>
+        <section class="program-hero" aria-labelledby="program-title">
+            <div class="program-collage" aria-hidden="true">
+                <div class="collage-panel panel-health">Precisión<br>y cuidado</div>
+                <div class="collage-panel panel-code">⚙</div>
+                <div class="collage-panel panel-tech">TECNO<br>LOGÍA</div>
+                <div class="collage-panel panel-agro">Movilidad<br>con futuro</div>
+                <div class="collage-number number-carreras">05 <small>Carreras</small></div>
+                <div class="collage-number number-years">03 <small>Años</small></div>
             </div>
-            <div class="banner-copy">
+            <div class="program-copy">
+                <span class="decorative-dot" aria-hidden="true"></span>
+                <p class="breadcrumb"><a href="../../../index.html">Home</a><span>»</span><a href="index.html">Programas</a><span>»</span> Mecatrónica Automotriz</p>
+                <h1 id="program-title">Mecatrónica Automotriz</h1>
+            </div>
+        </section>
+
+        <section class="program-detail" aria-labelledby="detail-title">
+            <div class="detail-visual" aria-label="Taller de mecatrónica automotriz">
+                <div class="workshop-image"></div>
+                <div class="detail-ribbon">IESP-HUANTA</div>
+            </div>
+            <div class="detail-copy">
                 <p class="eyebrow">Programa de estudios</p>
-                <h1>Mecatrónica Automotriz</h1>
-                <div class="breadcrumbs">
-                    <a href="../../../index.html">Home</a><span>›</span>
-                    <a href="index.html">Programas</a><span>›</span>
-                    <strong>Mecatrónica Automotriz</strong>
+                <h2 id="detail-title">Mecatrónica Automotriz</h2>
+                <p>El Programa de Estudios de Mecatrónica Automotriz forma profesionales capaces de integrar mecánica, electrónica y sistemas de control para diagnosticar, mantener y reparar vehículos modernos. La formación combina teoría, laboratorio y práctica aplicada.</p>
+                <h3>Titulación:</h3>
+                <p>Profesional Técnico en Mecatrónica Automotriz</p>
+                <div class="detail-facts">
+                    <div><span class="fact-icon">⌘</span><div><h3>Duración:</h3><p>6 semestres (3 años)</p></div></div>
+                    <div><span class="fact-icon">✧</span><div><h3>Modalidad:</h3><p>Presencial</p></div></div>
                 </div>
-                <p class="banner-description">Especialización en sistemas mecánicos y electrónicos del vehículo, con formación práctica, precisión técnica y visión innovadora.</p>
             </div>
         </section>
 
-        <section class="page-main">
-            <div class="program-intro">
-                <div class="program-visual" aria-hidden="true">
-                    <div class="visual-wheel"></div>
-                    <div class="visual-chip">MECATRÓNICA<br><small>AUTOMOTRIZ</small></div>
-                    <div class="visual-line line-one"></div>
-                    <div class="visual-line line-two"></div>
-                </div>
-                <div class="program-copy">
-                    <p class="section-kicker">Formación profesional técnica</p>
-                    <h2>Transforma la tecnología en soluciones para el transporte</h2>
-                    <p>El profesional técnico de Mecatrónica Automotriz está preparado para diagnosticar, mantener y reparar sistemas mecánicos, eléctricos y electrónicos de vehículos livianos y pesados.</p>
-                    <div class="program-facts">
-                        <div><strong>3 años</strong><span>Duración</span></div>
-                        <div><strong>Presencial</strong><span>Modalidad</span></div>
-                        <div><strong>Profesional</strong><span>Titulación</span></div>
+        <section class="modules-section" aria-labelledby="modules-title">
+            <div class="modules-intro">
+                <p>Durante los tres años de formación aprenderás a trabajar con sistemas mecánicos, eléctricos y electrónicos del vehículo, aplicando normas técnicas y de seguridad.</p>
+                <h2 id="modules-title">Módulos Profesionales</h2>
+            </div>
+            <div class="modules-track">
+                <article class="module-card">
+                    <div class="module-image image-one">
+                        <span class="module-number">01</span>
+                        <span class="module-symbol">M</span>
                     </div>
-                </div>
-            </div>
+                    <h3>Módulo 1: Mantenimiento de vehículos convencionales y con asistencia electrónica.</h3>
+                    <p>Ejecutar el mantenimiento preventivo de los vehículos automotores, de acuerdo con el kilometraje del vehículo, horas de funcionamiento del motor, procedimientos de seguridad y recomendaciones del fabricante.</p>
+                </article>
 
-            <div class="overview-copy">
-                <p>Durante la carrera desarrollarás prácticas en diagnóstico computarizado, mantenimiento preventivo y reparación de sistemas automotrices. La formación combina fundamentos técnicos, trabajo seguro y resolución de problemas reales.</p>
-                <p>También aprenderás a interpretar manuales, utilizar instrumentos de medición y aplicar procedimientos de calidad para entregar servicios confiables.</p>
-            </div>
+                <article class="module-card">
+                    <div class="module-image image-two">
+                        <span class="module-number">02</span>
+                        <span class="module-symbol">E</span>
+                    </div>
+                    <h3>Módulo 2: Mantenimiento de sistemas eléctricos y electrónicos automotrices.</h3>
+                    <p>Restablecer el sistema eléctrico y electrónico de los vehículos automotores, considerando políticas y procedimientos de la organización, manual del fabricante y normativa correspondiente.</p>
+                </article>
 
-            <div class="section-title">
-                <p class="section-kicker">Ruta de aprendizaje</p>
-                <h2>Módulos profesionales</h2>
-                <p>Avanza paso a paso desde los fundamentos del vehículo hasta el diagnóstico de sistemas electrónicos.</p>
-            </div>
+                <article class="module-card">
+                    <div class="module-image image-three">
+                        <span class="module-number">03</span>
+                        <span class="module-symbol">T</span>
+                    </div>
+                    <h3>Módulo 3: Mantenimiento del sistema de transmisión de vehículos con asistencia electrónica.</h3>
+                    <p>Restablecer la transmisión de potencia en el tren motriz de los vehículos, considerando políticas y procedimientos de la organización, manual del fabricante y normativa correspondiente.</p>
+                </article>
 
-            <div class="module-grid">
                 <article class="module-card">
-                    <span class="module-number">01</span>
-                    <div><h3>Mantenimiento mecánico</h3><p>Motor, transmisión, frenos, suspensión y dirección.</p></div>
-                </article>
-                <article class="module-card">
-                    <span class="module-number">02</span>
-                    <div><h3>Electricidad automotriz</h3><p>Circuitos, baterías, arranque, carga e iluminación.</p></div>
-                </article>
-                <article class="module-card">
-                    <span class="module-number">03</span>
-                    <div><h3>Electrónica y diagnóstico</h3><p>Sensores, actuadores, ECU y lectura de códigos.</p></div>
-                </article>
-                <article class="module-card">
-                    <span class="module-number">04</span>
-                    <div><h3>Gestión del servicio</h3><p>Seguridad, calidad, emprendimiento y atención al cliente.</p></div>
-                </article>
-            </div>
-
-            <div class="info-grid detail-grid">
-                <article class="info-card">
-                    <h3>Perfil profesional</h3>
-                    <p>Podrás desempeñarte como técnico automotriz, especialista en diagnóstico y responsable de mantenimiento vehicular.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Competencias</h3>
-                    <p>Interpretación técnica, uso de equipos de diagnóstico, mantenimiento preventivo y solución de fallas.</p>
+                    <div class="module-image image-four">
+                        <span class="module-number">04</span>
+                        <span class="module-symbol">M</span>
+                    </div>
+                    <h3>Módulo 4: Mantenimiento de motores de combustión interna con asistencia electrónica.</h3>
+                    <p>Restablecer la funcionalidad del motor de combustión interna de los vehículos automotores, considerando políticas y procedimientos de la organización, manual del fabricante y normativa correspondiente.</p>
                 </article>
             </div>
         </section>
+
+        <section class="graduate-profile-section" aria-labelledby="profile-title">
+            <div class="section-heading"><p class="eyebrow">Perfil de egreso</p><h2 id="profile-title">Lo que podrás lograr</h2><p>Desarrolla competencias técnicas para integrarte al sector automotriz y aportar soluciones innovadoras.</p></div>
+            <div class="profile-grid">
+                <article><span>01</span><h3>Diagnóstico especializado</h3><p>Interpretar manuales, planos y datos de diagnóstico para identificar fallas en sistemas automotrices.</p></article>
+                <article><span>02</span><h3>Mantenimiento seguro</h3><p>Aplicar procedimientos de mantenimiento preventivo y correctivo con responsabilidad y precisión.</p></article>
+                <article><span>03</span><h3>Innovación técnica</h3><p>Proponer mejoras y trabajar con tecnologías de última generación, incluyendo vehículos eléctricos.</p></article>
+            </div>
+        </section>
+
+        <section class="study-section" aria-labelledby="study-title">
+            <div class="study-heading"><p class="eyebrow">Tu ruta profesional</p><h2 id="study-title">Perfil y plan de estudios</h2><p>Una formación práctica para convertir tu interés por la tecnología automotriz en una profesión.</p></div>
+            <div class="study-layout">
+                <article class="profile-card"><span class="profile-orb"></span><p class="card-label">Perfil profesional</p><h3>Técnico en Mecatrónica Automotriz</h3><p>Aprenderás a intervenir vehículos y equipos automotrices con criterio técnico, pensamiento analítico y compromiso con la seguridad.</p><div class="profile-tags"><span>Precisión</span><span>Innovación</span><span>Seguridad</span></div></article>
+                <div class="semester-plan"><h3>Plan de estudios</h3><details open><summary><span>01</span> Semestre académico I</summary><p>Fundamentos de mecánica, electricidad automotriz, comunicación y seguridad en el taller.</p></details><details><summary><span>02</span> Semestre académico II</summary><p>Mantenimiento de motores, sistemas eléctricos y herramientas de diagnóstico.</p></details><details><summary><span>03</span> Semestre académico III</summary><p>Electrónica automotriz, sensores, actuadores y diagnóstico computarizado.</p></details><details><summary><span>04</span> Semestre académico IV</summary><p>Sistemas de transmisión, control electrónico y gestión del mantenimiento.</p></details><details><summary><span>05</span> Semestre académico V</summary><p>Vehículos híbridos, eléctricos, emprendimiento y proyectos automotrices.</p></details><details><summary><span>06</span> Semestre académico VI</summary><p>Experiencias formativas en situaciones reales de trabajo y proyecto final.</p></details></div>
+            </div>
+        </section>
+
+        <section class="testimonials-section" aria-labelledby="testimonials-title"><div class="section-heading"><p class="eyebrow">Testimonios</p><h2 id="testimonials-title">Lo que dicen nuestros estudiantes y egresados</h2><p>Historias de esfuerzo, aprendizaje y oportunidades construidas en Mecatrónica Automotriz.</p></div><div class="quote-grid"><article class="quote-card"><span>“</span><p>La práctica en laboratorio nos prepara para resolver problemas reales y trabajar con las nuevas tecnologías automotrices.</p><strong>Estudiante de Mecatrónica Automotriz</strong></article><article class="quote-card"><span>“</span><p>Aprendí a diagnosticar sistemas y a trabajar con responsabilidad en cada intervención del vehículo.</p><strong>Estudiante de Mecatrónica Automotriz</strong></article><article class="quote-card"><span>“</span><p>La carrera me dio herramientas para crecer profesionalmente y aportar soluciones a mi comunidad.</p><strong>Egresado de Mecatrónica Automotriz</strong></article></div></section>
     </main>
+
+    <footer class="program-footer">
+        <div><span class="footer-logo-badge">IESP<br>HUANTA</span><p>Instituto de Educación Superior<br>Público “Huanta”</p></div>
+        <div><h3>Facebook</h3><a class="footer-facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><span>f</span> Síguenos</a></div>
+        <div><h3>Información</h3><p>⌖ <a href="#contacto">Jr. Córdoba N.º 650</a></p><p>☎ <a href="tel:+5166322296">Teléfono: (066) 322296</a></p></div>
+        <div><h3>HORARIO DE ATENCIÓN:</h3><p> Lun - Vie: 7:30 am - 1:15 pm</p><p> Atención administrativa y académica</p></div>
+        <p class="program-footer-bottom">© 2026 Instituto de Educación Superior Público “Huanta”</p>
+    </footer>
 </body>
 </html>

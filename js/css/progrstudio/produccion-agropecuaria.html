@@ -3,38 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producción Agropecuaria | Programas de estudio</title>
+    <title>Producción Agropecuaria | IESP Huanta</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .agro-image { background-image: linear-gradient(135deg, rgba(3, 29, 53, .1), rgba(3, 29, 53, .5)), url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=900&q=85'); }
+        .agro-one { background-image: linear-gradient(180deg, transparent 45%, rgba(3, 20, 45, .72)), url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=85'); }
+        .agro-two { background-image: linear-gradient(180deg, transparent 45%, rgba(3, 20, 45, .72)), url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=900&q=85'); }
+        .agro-three { background-image: linear-gradient(180deg, transparent 45%, rgba(3, 20, 45, .72)), url('https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=900&q=85'); }
+        .program-detail, .modules-section, .graduate-profile-section, .study-section, .testimonials-section { animation: section-in .75s ease both; }
+        .program-detail { animation-delay: .08s; }
+        .modules-section { animation-delay: .16s; }
+        .graduate-profile-section { animation-delay: .24s; }
+        .study-section { animation-delay: .32s; }
+        .testimonials-section { animation-delay: .4s; }
+        .module-card, .profile-grid article { animation: card-in .7s ease both; }
+        .module-card:nth-child(2), .profile-grid article:nth-child(2) { animation-delay: .12s; }
+        .module-card:nth-child(3), .profile-grid article:nth-child(3) { animation-delay: .24s; }
+        .profile-orb { animation: soft-pulse 2.2s ease-in-out infinite alternate; }
+        .collage-panel { animation: panel-float 5s ease-in-out infinite alternate; }
+        .panel-code { animation-delay: -1s; }
+        .panel-tech { animation-delay: -2s; }
+        @keyframes section-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes card-in { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes soft-pulse { to { transform: scale(1.18); box-shadow: 0 0 2rem #b6f2ff; } }
+        @keyframes panel-float { to { transform: translateY(-8px); } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+    </style>
 </head>
 <body>
-    <header class="page-header">
-        <div class="page-header-inner">
-            <a class="back-link" href="index.html">← Volver</a>
-            <h1>Producción Agropecuaria</h1>
-        </div>
+    <div class="contact-bar" aria-label="Información de contacto">
+        <span><b>☎</b> (066) 322296</span><span><b>⌖</b> Jr. Córdoba N.º 650</span><span><b>✉</b> contactos@iestphuanta.edu.pe</span><span><b>f</b> Facebook</span>
+    </div>
+    <header class="site-header">
+        <a class="brand" href="../../../index.html" aria-label="Volver al inicio">IESP <small>HUANTA</small></a>
+        <nav aria-label="Navegación principal">
+            <a href="../../../index.html#nosotros">Nosotros⌄</a>
+            <details class="nav-programs"><summary class="nav-programs-toggle active">Programas de estudios <span>⌄</span></summary><div class="nav-programs-menu">
+                <a href="diseno-web.html"><span>⌘</span> Diseño y Programación Web</a><a href="enfermeria-tecnica.html"><span>✚</span> Enfermería Técnica</a><a href="mecatronica.html"><span>⚙</span> Mecatrónica Automotriz</a><a href="industrias-alimentarias.html"><span>◈</span> Industrias Alimentarias</a><a class="current-program" href="produccion-agropecuaria.html"><span>✦</span> Producción Agropecuaria</a>
+            </div></details>
+            <a href="../../../index.html#noticias">Admisión y Matrícula⌄</a><a href="../../../index.html#estadisticas">Transparencia⌄</a><a href="../../../index.html#contacto">Trámite⌄</a><a href="../../../index.html#contacto">Contáctanos</a><a href="../../../index.html#servicios">Servicios⌄</a><a href="../../../index.html">Otras páginas⌄</a>
+        </nav>
     </header>
 
-    <main class="page-main">
-        <section class="hero-section">
-            <span class="eyebrow">Agro</span>
-            <h2>Innovación y productividad con enfoque sostenible</h2>
-            <p>Desarrolla habilidades para mejorar procesos agrícolas y pecuarios con responsabilidad ambiental y eficiencia.</p>
+    <main>
+        <section class="program-hero" aria-labelledby="program-title">
+            <div class="program-collage" aria-hidden="true"><div class="collage-panel panel-health">Cultivo<br>y bienestar</div><div class="collage-panel panel-code">✦</div><div class="collage-panel panel-tech">AGRO<br>TECNOLOGÍA</div><div class="collage-panel panel-agro">Producción<br>con futuro</div><div class="collage-number number-carreras">05 <small>Carreras</small></div><div class="collage-number number-years">03 <small>Años</small></div></div>
+            <div class="program-copy"><span class="decorative-dot" aria-hidden="true"></span><p class="breadcrumb"><a href="../../../index.html">Home</a><span>»</span><a href="index.html">Programas</a><span>»</span> Producción Agropecuaria</p><h1 id="program-title">Producción Agropecuaria</h1></div>
         </section>
 
-        <section class="info-grid">
-            <article class="info-card">
-                <h3>Objetivo</h3>
-                <p>Preparar profesionales para gestionar procesos productivos con sostenibilidad y mejora continua.</p>
-            </article>
-            <article class="info-card">
-                <h3>Competencias</h3>
-                <p>Manejo de cultivos, producción animal, planificación y recursos naturales.</p>
-            </article>
-            <article class="info-card">
-                <h3>Perfil profesional</h3>
-                <p>Técnico agropecuario, gestor productivo y especialista en innovación agrícola.</p>
-            </article>
+        <section class="program-detail" aria-labelledby="detail-title">
+            <div class="detail-visual" aria-label="Producción agrícola y pecuaria"><div class="workshop-image agro-image"></div><div class="detail-ribbon">IESP-HUANTA</div></div>
+            <div class="detail-copy"><p class="eyebrow">Programa de estudios</p><h2 id="detail-title">Producción Agropecuaria</h2><p>El Programa de Estudios de Producción Agropecuaria prepara profesionales para gestionar procesos agrícolas y pecuarios con sostenibilidad, innovación y eficiencia. Combina conocimientos técnicos, práctica de campo y responsabilidad ambiental.</p><h3>Titulación:</h3><p>Profesional Técnico en Producción Agropecuaria</p><div class="detail-facts"><div><span class="fact-icon">⌘</span><div><h3>Duración:</h3><p>6 semestres (3 años)</p></div></div><div><span class="fact-icon">✧</span><div><h3>Modalidad:</h3><p>Presencial</p></div></div></div></div>
         </section>
+
+        <section class="modules-section" aria-labelledby="modules-title"><div class="modules-intro"><p>Durante los tres años de formación aprenderás a planificar, ejecutar y evaluar procesos agrícolas y pecuarios, aprovechando responsablemente los recursos naturales.</p><h2 id="modules-title">Módulos Profesionales</h2></div><div class="modules-track">
+            <article class="module-card"><div class="module-image agro-one"><span class="module-number">01</span></div><h3>Manejo y producción de cultivos</h3><p>Planifica y ejecuta labores agrícolas, desde la preparación del suelo hasta la cosecha, aplicando buenas prácticas.</p></article>
+            <article class="module-card"><div class="module-image agro-two"><span class="module-number">02</span></div><h3>Producción y manejo pecuario</h3><p>Gestiona la crianza y alimentación animal considerando bienestar, sanidad y productividad sostenible.</p></article>
+            <article class="module-card"><div class="module-image agro-three"><span class="module-number">03</span></div><h3>Gestión agropecuaria sostenible</h3><p>Administra recursos, costos y proyectos productivos con innovación, enfoque empresarial y cuidado ambiental.</p></article>
+        </div></section>
+
+        <section class="graduate-profile-section" aria-labelledby="profile-title"><div class="section-heading"><p class="eyebrow">Perfil de egreso</p><h2 id="profile-title">Lo que podrás lograr</h2><p>Desarrolla las capacidades necesarias para aportar al crecimiento productivo de tu comunidad.</p></div><div class="profile-grid"><article><span>01</span><h3>Manejo de cultivos</h3><p>Aplicar técnicas de producción agrícola, control de plagas y aprovechamiento eficiente del agua y el suelo.</p></article><article><span>02</span><h3>Producción animal</h3><p>Organizar procesos pecuarios con criterios de sanidad, alimentación, bienestar y mejora genética.</p></article><article><span>03</span><h3>Emprendimiento rural</h3><p>Formular proyectos productivos rentables, sostenibles y articulados con las necesidades del mercado.</p></article></div></section>
+
+        <section class="study-section" aria-labelledby="study-title"><div class="study-heading"><p class="eyebrow">Tu ruta profesional</p><h2 id="study-title">Perfil y plan de estudios</h2><p>Aprende en campo y en aula para convertir tus ideas en soluciones productivas sostenibles.</p></div><div class="study-layout"><article class="profile-card"><span class="profile-orb"></span><p class="card-label">Perfil profesional</p><h3>Técnico en Producción Agropecuaria</h3><p>Podrás gestionar cultivos, producción animal y emprendimientos agropecuarios con responsabilidad, innovación y compromiso con el ambiente.</p><div class="profile-tags"><span>Sostenibilidad</span><span>Innovación</span><span>Gestión</span></div></article><div class="semester-plan"><h3>Plan de estudios</h3><details open><summary><span>01</span> Semestre académico I</summary><p>Fundamentos agropecuarios, comunicación, matemática y seguridad en el trabajo de campo.</p></details><details><summary><span>02</span> Semestre académico II</summary><p>Suelos, producción de cultivos, riego y herramientas agrícolas.</p></details><details><summary><span>03</span> Semestre académico III</summary><p>Manejo de cultivos, sanidad vegetal y producción de forrajes.</p></details><details><summary><span>04</span> Semestre académico IV</summary><p>Producción animal, alimentación, sanidad y manejo de especies.</p></details><details><summary><span>05</span> Semestre académico V</summary><p>Transformación primaria, gestión de negocios y proyectos agropecuarios.</p></details><details><summary><span>06</span> Semestre académico VI</summary><p>Experiencias formativas en situaciones reales de trabajo y proyecto final.</p></details></div></div></section>
+
+        <section class="testimonials-section" aria-labelledby="testimonials-title"><div class="section-heading"><p class="eyebrow">Comunidad Huanta</p><h2 id="testimonials-title">Produce oportunidades</h2><p>Una carrera para quienes quieren trabajar la tierra, cuidar la vida y transformar el futuro de su región.</p></div><div class="quote-card"><span>“</span><p>La formación combina la práctica de campo con conocimientos técnicos para crear proyectos productivos que beneficien a nuestra comunidad.</p><strong>Estudiante de Producción Agropecuaria</strong></div></section>
     </main>
+    <footer class="site-footer"><strong>IESTP Huanta</strong><span>Formación profesional técnica para transformar nuestra región.</span><span>© 2026 Instituto de Educación Superior Público “Huanta”</span></footer>
 </body>
 </html>
