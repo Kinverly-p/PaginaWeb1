@@ -14,11 +14,12 @@
     <!-- HEADER -->
     <header class="site-header">
 
-        <div class="top-contact-bar">
+        <div class="top-contact-bar">g
             <div class="contact-bar-inner">
                 <span class="contact-item"><span class="icon">☎</span> (066) 322296</span>
                 <span class="contact-item"><span class="icon">⌖</span> Jr. Córdova N.º 650</span>
                 <span class="contact-item"><span class="icon">◷</span> Lun. a vie., 7:30 a. m. a 1:15 p. m.</span>
+                <a class="contact-item social-item social-item--taiwild" href="https://taiwild.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio web oficial"><span class="icon">↗</span></a>
                 <a class="contact-item social-item" href="https://www.facebook.com/profile.php?id=61557665334329" target="_blank" rel="noopener noreferrer" aria-label="Facebook oficial"><span class="icon">f</span></a>
             </div>
         </div>
@@ -71,6 +72,16 @@
                 <p class="hero-subtitle">
                     Somos un instituto público licenciado que brinda formación técnica y profesional de calidad, con programas orientados a las demandas del mercado laboral y al desarrollo de nuestra región.
                 </p>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#carreras">Ver carreras</a>
+                    <a class="btn btn-secondary" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Ver enlace</a>
+                </div>
+
+                <div class="hero-brand-row">
+                    <span class="taiwild-pill">Conexión</span>
+                    <span class="brand-note">Soluciones digitales para la educación</span>
+                </div>
 
                 <div class="hero-programs">
                     <div class="program-mini">
@@ -192,6 +203,7 @@
                         <h3>Diseño y Programación Web</h3>
                         <p>Desarrollo de aplicaciones web modernas, responsivas y orientadas al usuario.</p>
                     </a>
+                    <a class="program-partner" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Conectar</a>
                 </article>
 
                 <article class="program-card">
@@ -200,6 +212,7 @@
                         <h3>Enfermería Técnica</h3>
                         <p>Formación para el sector salud con enfoque profesional, humanista y técnico.</p>
                     </a>
+                    <a class="program-partner" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Conectar</a>
                 </article>
 
                 <article class="program-card">
@@ -208,6 +221,7 @@
                         <h3>Mecatrónica Automotriz</h3>
                         <p>Especialización en sistemas automotrices, electrónica y mantenimiento avanzado.</p>
                     </a>
+                    <a class="program-partner" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Conectar</a>
                 </article>
 
                 <article class="program-card">
@@ -216,6 +230,7 @@
                         <h3>Industrias Alimentarias</h3>
                         <p>Procesamiento, calidad e innovación en la industria alimentaria regional.</p>
                     </a>
+                    <a class="program-partner" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Conectar</a>
                 </article>
 
                 <article class="program-card">
@@ -224,6 +239,7 @@
                         <h3>Producción Agropecuaria</h3>
                         <p>Gestión de producción agrícola y pecuaria con enfoque productivo y sostenible.</p>
                     </a>
+                    <a class="program-partner" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Conectar</a>
                 </article>
             </div>
         </section>
@@ -359,10 +375,18 @@
             </div>
 
             <div class="footer-column footer-social">
-                <h3>Facebook</h3>
+                <h3>Redes</h3>
                 <a href="https://www.facebook.com/profile.php?id=61557665334329" target="_blank" rel="noopener noreferrer">
                     <span aria-hidden="true">f</span> Facebook
                 </a>
+                <a class="footer-taiwild" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">
+                    <span aria-hidden="true">↗</span> Ver enlace
+                </a>
+            </div>
+
+            <div class="footer-column footer-branding">
+                <h3>Desarrollo</h3>
+                <a href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Portal</a>
             </div>
 
             <div class="footer-column footer-contact">
@@ -382,6 +406,33 @@
         </div>
     </footer>
 </div>
+
+<script>
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const canObserveSections = "IntersectionObserver" in window;
+
+    if (!prefersReducedMotion && canObserveSections) {
+        const revealTargets = document.querySelectorAll(
+            ".section-heading, .about-copy, .about-visual, .metric-box, .program-card, .service-card, .news-card, .event-card, .gallery-tile, .contact-info, .contact-form"
+        );
+
+        document.documentElement.classList.add("motion-ready");
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: "0px 0px -36px 0px" });
+
+        revealTargets.forEach((target) => {
+            target.classList.add("reveal-on-scroll");
+            revealObserver.observe(target);
+        });
+    }
+</script>
 
 </body>
 

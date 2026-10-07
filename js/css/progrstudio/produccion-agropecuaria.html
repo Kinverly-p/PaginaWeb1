@@ -28,6 +28,22 @@
         @keyframes soft-pulse { to { transform: scale(1.18); box-shadow: 0 0 2rem #b6f2ff; } }
         @keyframes panel-float { to { transform: translateY(-8px); } }
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+
+        .taiwild-bar { display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; padding:.72rem 1rem; background:linear-gradient(135deg, rgba(27,184,214,.18), rgba(17,61,112,.08)); border-bottom:1px solid rgba(27,184,214,.2); color:#123856; font-weight:700; }
+        .taiwild-bar strong { color:#0e8caf; }
+        .taiwild-bar a { display:inline-flex; align-items:center; justify-content:center; min-height:2.1rem; padding:.4rem .8rem; border-radius:999px; background:linear-gradient(135deg, #1bb8d6, #0e8caf); color:#fff; text-decoration:none; box-shadow:0 8px 18px rgba(27,184,214,.2); }
+        .taiwild-cta { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:2rem auto 0; width:min(1180px, calc(100% - 2rem)); padding:1.2rem 1.4rem; border:1px solid rgba(27,184,214,.18); border-radius:20px; background:linear-gradient(135deg, rgba(27,184,214,.08), rgba(24,119,211,.06)); }
+        .taiwild-cta h3 { margin:.3rem 0 0; color:#10375c; font-size:1.2rem; }
+        .taiwild-button { display:inline-flex; align-items:center; justify-content:center; min-height:2.9rem; padding:.75rem 1.2rem; border-radius:999px; background:linear-gradient(135deg, #1bb8d6, #0e8caf); color:#fff; text-decoration:none; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+        .program-footer { display:grid; grid-template-columns:1.3fr 1fr 1.25fr 1.2fr; gap:1.5rem; margin-top:3rem; padding:3rem 1.25rem 1.2rem; background:linear-gradient(135deg, #0d2a47 0%, #184d7c 50%, #102e4a 100%); color:#ebf7ff; }
+        .program-footer h3 { margin:0 0 .8rem; font-size:1.05rem; }
+        .program-footer h3::after { content:""; display:block; width:2.4rem; height:3px; margin-top:.4rem; border-radius:3px; background:rgba(122,227,255,0.8); }
+        .program-footer p, .program-footer a { margin:.35rem 0; color:#e3f2ff; text-decoration:none; line-height:1.7; }
+        .program-footer a:hover { color:#9feaff; }
+        .footer-badge { display:inline-flex; align-items:center; justify-content:center; width:4rem; height:2.2rem; border-radius:12px 12px 14px 10px; background:linear-gradient(135deg, #1bb8d6, #0e8caf); color:#fff; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; box-shadow:0 12px 20px rgba(27,184,214,0.2); margin-bottom:0.8rem; }
+        .program-footer-bottom { grid-column:1 / -1; padding-top:1rem; border-top:1px solid rgba(210,239,255,.2); text-align:center; color:#d7f0ff; }
+        @media (max-width: 860px) { .taiwild-cta { flex-direction:column; align-items:flex-start; } .program-footer { grid-template-columns:1fr 1fr; } }
+        @media (max-width: 560px) { .program-footer { grid-template-columns:1fr; } }
     </style>
 </head>
 <body>
@@ -44,6 +60,11 @@
             <a href="../../../index.html#noticias">Admisión y Matrícula⌄</a><a href="../../../index.html#estadisticas">Transparencia⌄</a><a href="../../../index.html#contacto">Trámite⌄</a><a href="../../../index.html#contacto">Contáctanos</a><a href="../../../index.html#servicios">Servicios⌄</a><a href="../../../index.html">Otras páginas⌄</a>
         </nav>
     </header>
+
+    <div class="taiwild-bar">
+        <span>Enlace externo</span>
+        <a href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Ver</a>
+    </div>
 
     <main>
         <section class="program-hero" aria-labelledby="program-title">
@@ -62,12 +83,43 @@
             <article class="module-card"><div class="module-image agro-three"><span class="module-number">03</span></div><h3>Gestión agropecuaria sostenible</h3><p>Administra recursos, costos y proyectos productivos con innovación, enfoque empresarial y cuidado ambiental.</p></article>
         </div></section>
 
-        <section class="graduate-profile-section" aria-labelledby="profile-title"><div class="section-heading"><p class="eyebrow">Perfil de egreso</p><h2 id="profile-title">Lo que podrás lograr</h2><p>Desarrolla las capacidades necesarias para aportar al crecimiento productivo de tu comunidad.</p></div><div class="profile-grid"><article><span>01</span><h3>Manejo de cultivos</h3><p>Aplicar técnicas de producción agrícola, control de plagas y aprovechamiento eficiente del agua y el suelo.</p></article><article><span>02</span><h3>Producción animal</h3><p>Organizar procesos pecuarios con criterios de sanidad, alimentación, bienestar y mejora genética.</p></article><article><span>03</span><h3>Emprendimiento rural</h3><p>Formular proyectos productivos rentables, sostenibles y articulados con las necesidades del mercado.</p></article></div></section>
+        <section class="graduate-profile-section" aria-labelledby="profile-title"><div class="section-heading"><p class="eyebrow">Perfil de egreso</p><h2 id="profile-title">Lo que podrás lograr</h2><p>Desarrolla las capacidades necesarias para aportar al crecimiento productivo de tu comunidad.</p></div><div class="profile-grid"><article><span>01</span><h3>Manejo de cultivos</h3><p>Aplicar técnicas de producción agrícola, control de plagas y aprovechamiento eficiente del agua y el suelo.</p></article><article><span>02</span><h3>Producción animal</h3><p>Organizar procesos pecuarios con criterios de sanidad, alimentación, bienestar y mejora genética.</p></article><article><span>03</span><h3>Emprendimiento rural</h3><p>Formular proyectos productivos rentables, sostenibles y articulados con las necesidades del contexto local.</p></article></div></section>
+
+        <section class="taiwild-cta">
+            <div>
+                <span class="eyebrow">Enlace externo</span>
+                <h3>Conecta tu formación agraria con innovación y oportunidades digitales.</h3>
+            </div>
+            <a class="taiwild-button" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Ver enlace</a>
+        </section>
 
         <section class="study-section" aria-labelledby="study-title"><div class="study-heading"><p class="eyebrow">Tu ruta profesional</p><h2 id="study-title">Perfil y plan de estudios</h2><p>Aprende en campo y en aula para convertir tus ideas en soluciones productivas sostenibles.</p></div><div class="study-layout"><article class="profile-card"><span class="profile-orb"></span><p class="card-label">Perfil profesional</p><h3>Técnico en Producción Agropecuaria</h3><p>Podrás gestionar cultivos, producción animal y emprendimientos agropecuarios con responsabilidad, innovación y compromiso con el ambiente.</p><div class="profile-tags"><span>Sostenibilidad</span><span>Innovación</span><span>Gestión</span></div></article><div class="semester-plan"><h3>Plan de estudios</h3><details open><summary><span>01</span> Semestre académico I</summary><p>Fundamentos agropecuarios, comunicación, matemática y seguridad en el trabajo de campo.</p></details><details><summary><span>02</span> Semestre académico II</summary><p>Suelos, producción de cultivos, riego y herramientas agrícolas.</p></details><details><summary><span>03</span> Semestre académico III</summary><p>Manejo de cultivos, sanidad vegetal y producción de forrajes.</p></details><details><summary><span>04</span> Semestre académico IV</summary><p>Producción animal, alimentación, sanidad y manejo de especies.</p></details><details><summary><span>05</span> Semestre académico V</summary><p>Transformación primaria, gestión de negocios y proyectos agropecuarios.</p></details><details><summary><span>06</span> Semestre académico VI</summary><p>Experiencias formativas en situaciones reales de trabajo y proyecto final.</p></details></div></div></section>
 
         <section class="testimonials-section" aria-labelledby="testimonials-title"><div class="section-heading"><p class="eyebrow">Comunidad Huanta</p><h2 id="testimonials-title">Produce oportunidades</h2><p>Una carrera para quienes quieren trabajar la tierra, cuidar la vida y transformar el futuro de su región.</p></div><div class="quote-card"><span>“</span><p>La formación combina la práctica de campo con conocimientos técnicos para crear proyectos productivos que beneficien a nuestra comunidad.</p><strong>Estudiante de Producción Agropecuaria</strong></div></section>
     </main>
-    <footer class="site-footer"><strong>IESTP Huanta</strong><span>Formación profesional técnica para transformar nuestra región.</span><span>© 2026 Instituto de Educación Superior Público “Huanta”</span></footer>
+
+    <footer class="program-footer">
+        <div>
+            <div class="footer-badge">T</div>
+            <p>IESTP Huanta</p>
+            <p>Instituto de Educación Superior Público “Huanta”</p>
+        </div>
+        <div>
+            <h3>Enlace</h3>
+            <a href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Sitio</a>
+            <a href="https://www.facebook.com/profile.php?id=61557665334329" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+        <div>
+            <h3>Información</h3>
+            <p>Jr. Córdoba N.º 650</p>
+            <p>(066) 322296</p>
+        </div>
+        <div>
+            <h3>Horario</h3>
+            <p>Lun - Vie: 7:30 am - 1:15 pm</p>
+            <p>Atención académica y administrativa</p>
+        </div>
+        <div class="program-footer-bottom">© 2026 Instituto de Educación Superior Público “Huanta”</div>
+    </footer>
 </body>
 </html>

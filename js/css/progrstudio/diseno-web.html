@@ -5,6 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseño y Programación Web | Programas de estudio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --navy: #0b1d2d;
+            --navy-2: #143d68;
+            --blue: #1877d3;
+            --sky: #7ae3ff;
+            --taiwild: #1bb8d6;
+            --taiwild-deep: #0e8caf;
+            --paper: #edf5ff;
+            --card: #ffffff;
+            --muted: #5a6d84;
+            --line: rgba(16, 38, 62, 0.1);
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(180deg, #edf4ff 0%, #f7fbff 100%); color: var(--navy); }
+        a { color: inherit; }
+        .page-header {
+            background: linear-gradient(90deg, #0a1d31 0%, #163c66 100%);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(10, 29, 49, 0.15);
+        }
+        .page-header-inner {
+            width: min(1200px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: 1.1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.6rem;
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.08);
+            color: #eef9ff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        h1 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); }
+        .taiwild-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.7rem 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(27,184,214,0.18), rgba(17,61,112,0.08));
+            border-bottom: 1px solid rgba(27,184,214,0.18);
+            color: #103b5a;
+            font-weight: 700;
+        }
+        .taiwild-bar strong { color: var(--taiwild-deep); }
+        .taiwild-bar a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.1rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--taiwild), var(--taiwild-deep));
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(27,184,214,0.2);
+        }
+        .page-main {
+            width: min(1200px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: 2.5rem 0 3rem;
+        }
+        .hero-section {
+            padding: 2.2rem 2rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #112d4d 0%, #184f85 55%, #0e2440 100%);
+            color: #fff;
+            box-shadow: 0 20px 40px rgba(9, 20, 34, 0.18);
+        }
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(122, 227, 255, 0.12);
+            border: 1px solid rgba(122, 227, 255, 0.25);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+        .hero-section h2 {
+            margin: 0 0 0.7rem;
+            font-size: clamp(2.1rem, 4vw, 3.5rem);
+            line-height: 1.08;
+        }
+        .hero-section p {
+            margin: 0;
+            max-width: 760px;
+            color: rgba(238, 247, 255, 0.88);
+            font-size: 1.04rem;
+            line-height: 1.8;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.3rem;
+            margin-top: 2rem;
+        }
+        .info-card {
+            padding: 1.5rem;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: var(--card);
+            box-shadow: 0 12px 26px rgba(19, 37, 63, 0.06);
+        }
+        .info-card h3 {
+            margin: 0 0 0.7rem;
+            color: #0f2f51;
+            font-size: 1.25rem;
+        }
+        .info-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+        .cta-panel {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.3rem 1.5rem;
+            border: 1px solid rgba(27,184,214,0.18);
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(27,184,214,0.08), rgba(24,119,211,0.06));
+        }
+        .cta-panel h3 {
+            margin: 0.3rem 0 0;
+            color: #10375c;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+        }
+        .taiwild-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.9rem;
+            padding: 0.75rem 1.2rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--taiwild), var(--taiwild-deep));
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 14px 20px rgba(27,184,214,0.22);
+        }
+        .career-footer {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1.25fr 1.2fr;
+            gap: 1.5rem;
+            padding: 3rem 1.25rem 1.2rem;
+            background: linear-gradient(135deg, #0d2a47 0%, #184d7c 50%, #102e4a 100%);
+            color: #ebf7ff;
+        }
+        .career-footer .brand-box, .career-footer .col { min-width: 0; }
+        .career-footer h3 {
+            margin: 0 0 0.8rem;
+            font-size: 1.05rem;
+        }
+        .career-footer h3::after {
+            content: "";
+            display: block;
+            width: 2.4rem;
+            height: 3px;
+            margin-top: 0.4rem;
+            border-radius: 3px;
+            background: rgba(122,227,255,0.8);
+        }
+        .career-footer p, .career-footer a {
+            margin: 0.35rem 0;
+            color: #e3f2ff;
+            text-decoration: none;
+            line-height: 1.7;
+        }
+        .career-footer a:hover { color: #9feaff; }
+        .footer-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 2.2rem;
+            border-radius: 12px 12px 14px 10px;
+            background: linear-gradient(135deg, var(--taiwild), var(--taiwild-deep));
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 12px 20px rgba(27,184,214,0.2);
+            margin-bottom: 0.8rem;
+        }
+        .footer-bottom {
+            grid-column: 1 / -1;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(210, 239, 255, 0.2);
+            text-align: center;
+            color: #d7f0ff;
+        }
+        @media (max-width: 860px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .cta-panel { flex-direction: column; align-items: flex-start; }
+            .career-footer { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 560px) {
+            .career-footer { grid-template-columns: 1fr; }
+            .page-header-inner { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
 </head>
 <body>
     <header class="page-header">
@@ -13,6 +232,11 @@
             <h1>Diseño y Programación Web</h1>
         </div>
     </header>
+
+    <div class="taiwild-bar">
+        <span>Enlace externo</span>
+        <a href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Ver</a>
+    </div>
 
     <main class="page-main">
         <section class="hero-section">
@@ -35,6 +259,38 @@
                 <p>Diseñador web, desarrollador front-end, creativo digital y experto en interfaces.</p>
             </article>
         </section>
+
+        <section class="cta-panel">
+            <div>
+                <span class="eyebrow">Enlace externo</span>
+                <h3>Conecta tu carrera con la tecnología actual del futuro digital.</h3>
+            </div>
+            <a class="taiwild-btn" href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Ver enlace</a>
+        </section>
     </main>
+
+    <footer class="career-footer">
+        <div class="brand-box">
+            <div class="footer-badge">T</div>
+            <p>IESTP Huanta</p>
+            <p>Instituto de Educación Superior Público “Huanta”</p>
+        </div>
+        <div class="col">
+            <h3>Enlace</h3>
+            <a href="https://taiwild.com" target="_blank" rel="noopener noreferrer">Sitio</a>
+            <a href="https://www.facebook.com/profile.php?id=61557665334329" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+        <div class="col">
+            <h3>Información</h3>
+            <p>Jr. Córdoba N.º 650</p>
+            <p>(066) 322296</p>
+        </div>
+        <div class="col">
+            <h3>Horario</h3>
+            <p>Lun - Vie: 7:30 am - 1:15 pm</p>
+            <p>Atención académica y administrativa</p>
+        </div>
+        <div class="footer-bottom">© 2026 Instituto de Educación Superior Público “Huanta”</div>
+    </footer>
 </body>
 </html>
